@@ -10,9 +10,11 @@ const gameContainer = document.querySelector(".gameboard-container");
 const startNewGame = document.querySelector("#start");
 const outText = document.querySelector(".out");
 const listSunkShip = document.querySelector(".list");
-const counterHitsText = document.querySelector(".counter-hits");
+const counterHitsText = document.querySelector(".counter-false-hits");
+const counterGoodsHits = document.querySelector(".counter-good-hits");
 const dialog = document.querySelector(".dialog");
 const width = 10;
+let allHits = 50;
 let falseHits = 0;
 let goodHits = 0;
 
@@ -143,6 +145,7 @@ function getBoom(field) {
   field.removeEventListener("click", choiceField);
   outText.innerText = "You hit the ship!";
   goodHits++;
+  counterGoodsHits.innerText = `Good Hits: ${goodHits}`
   let classes = Array.from(field.classList);
   classes = classes.filter((className) => className !== "block");
   classes = classes.filter((className) => className !== "boom");
@@ -169,7 +172,7 @@ function checkSunkShips(arrHits, arrSunk) {
       outText.innerText = `You sunk  ${shipName}!`;
       playerHits = arrHits.filter((el) => el !== shipName);
       arrSunk.push(shipName);
-      listSunkShip.innerHTML += `${shipName.toUpperCase()}\n <br>`;
+      listSunkShip.innerHTML += `!!!  ${shipName.toUpperCase()}\n <br>`;
     }
   }
   checkShip("destroyer", 2);
