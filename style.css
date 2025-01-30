@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  font-size: 24px;
 }
 .out,.counter-hits {
   font-size: 20px;
@@ -40,8 +41,15 @@ body {
   padding: 20px 65px;
   border-radius: 20px;
   color:  rgb(8, 148, 106);
+  box-shadow: 0px 0px 20px rgba(241, 235, 235, 0.959);
   text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
   font-size: 18px;
+} 
+#start:hover {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  background-color: rgb(237, 235, 235);
+  color:  rgb(10, 161, 116);
 } 
 
 .block {
@@ -49,6 +57,10 @@ body {
   width: 38px;
   height: 38px;
 }
+.block:hover {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+}
+
 .fall-cell{
  opacity: 0.5;
  background-color: rgb(1, 62, 108);
