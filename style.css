@@ -29,12 +29,18 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  font-size: 24px;
 }
 .out,.counter-hits {
   font-size: 20px;
   margin-top: 50px;
   margin-left: 25px;
+}
+.counter-hits {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px;
+  font-size: 24px;
 }
 #start {
   border: none;
@@ -50,8 +56,7 @@ body {
   text-shadow: 0px 0px 5px rgb(255, 255, 255);
   background-color: rgb(237, 235, 235);
   color:  rgb(10, 161, 116);
-} 
-
+}
 .block {
   border: 1px solid  rgb(241, 235, 235);
   width: 38px;
@@ -60,7 +65,6 @@ body {
 .block:hover {
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
 }
-
 .fall-cell{
  opacity: 0.5;
  background-color: rgb(1, 62, 108);
@@ -83,4 +87,7 @@ body {
   padding: 20px;
   margin-right: 300px;
   z-index: 1;
+}
+.list {
+  color: red;
 }
