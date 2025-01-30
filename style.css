@@ -28,7 +28,6 @@ body {
   width: 300px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
 }
 .out,.counter-hits {
   font-size: 20px;
@@ -84,8 +83,8 @@ body {
   border: 2px solid rgb(241, 235, 235);
   border-radius: 20px;
   position: absolute;
-  padding: 20px;
-  margin-right: 300px;
+  padding: 50px;
+  font-size: 24px;
   z-index: 1;
 }
 .list {
