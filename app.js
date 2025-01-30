@@ -14,7 +14,6 @@ const counterHitsText = document.querySelector(".counter-false-hits");
 const counterGoodsHits = document.querySelector(".counter-good-hits");
 const dialog = document.querySelector(".dialog");
 const width = 10;
-let allHits = 50;
 let falseHits = 0;
 let goodHits = 0;
 
@@ -188,7 +187,7 @@ function checkWin(sunkArr, shipsArr) {
     dialog.classList.add("active");
     dialog.innerText = `You WON! Your all hits:  ${
       goodHits + falseHits
-    }, and ${goodHits} are success!`;
+    }!`;
   }
 }
 function gameOver() {
