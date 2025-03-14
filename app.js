@@ -1,11 +1,3 @@
-/*todo   Розробіть гру: Морський бій
-
-  Розробіть 2 вимірний масив (10 на 10), та зробіть візуальну сітку (кораблі не повинні бути видимі).
-
-  При 20 кліках на кубіки - гра повинна завершуватись поразкою, якщо до цього часу всі кораблики підбиті то гра виграна.
-
-  Кораблі генерувати в рандомному порядку в масиві (не більше 10 кораблів)*/
-
 const gameContainer = document.querySelector(".gameboard-container");
 const startNewGame = document.querySelector("#start");
 const outText = document.querySelector(".out");
@@ -14,6 +6,7 @@ const counterHitsText = document.querySelector(".counter-false-hits");
 const counterGoodsHits = document.querySelector(".counter-good-hits");
 const dialog = document.querySelector(".dialog");
 const width = 10;
+let allHits = 50;
 let falseHits = 0;
 let goodHits = 0;
 
@@ -144,7 +137,7 @@ function getBoom(field) {
   field.removeEventListener("click", choiceField);
   outText.innerText = "You hit the ship!";
   goodHits++;
-  counterGoodsHits.innerText = `Good Hits: ${goodHits}`
+  counterGoodsHits.innerText = ` ${goodHits} Boom!!!`
   let classes = Array.from(field.classList);
   classes = classes.filter((className) => className !== "block");
   classes = classes.filter((className) => className !== "boom");
@@ -161,7 +154,7 @@ function choiceField() {
   if (falseHits > 50) {
     gameOver();
     dialog.classList.add("active");
-    dialog.innerText = `Your hits ended. GO again!`;
+    dialog.innerText = `Your hits ended. GO again!`; 
   }
 }
 
@@ -187,7 +180,7 @@ function checkWin(sunkArr, shipsArr) {
     dialog.classList.add("active");
     dialog.innerText = `You WON! Your all hits:  ${
       goodHits + falseHits
-    }!`;
+    }, and ${goodHits} are success!`;
   }
 }
 function gameOver() {
@@ -200,3 +193,10 @@ function gameOver() {
 allBoardFields.forEach((field) => {
   field.addEventListener("click", choiceField);
 });
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape' || e.key === 'Enter') {
+    dialog.classList.remove('active');
+    dialog.innerText = ''
+  }
+})
